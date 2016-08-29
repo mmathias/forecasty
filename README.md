@@ -1,4 +1,4 @@
-Forecasty
+# Forecasty
 
 This project is meant to show the forecast of any city for the next 5 days.
 
