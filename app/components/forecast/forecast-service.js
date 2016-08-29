@@ -1,14 +1,10 @@
 'use strict';
 
 angular.module('myApp.forecast.forecast-service', [])
-    .service('forecastService', ['$http', '$interpolate', 'CONFIG', function($http, $interpolate, CONFIG) {
-
-        var PATH = '/data/2.5/forecast?q={{city}}&units=metric&mode=json&APPID={{appKey}}';
+    .service('forecastService', ['$http', function($http) {
 
         this.getFeed = function(city) {
-            var urlFormatted = CONFIG.forecast.url + $interpolate(PATH)({city: city, appKey: CONFIG.forecast.key});
-
-            return $http.get(urlFormatted)
+            return $http.get('/feed', {params: { "city": city}})
                 .then(function(response) {
                     return response.data;
                 });
