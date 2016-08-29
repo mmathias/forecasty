@@ -146,10 +146,10 @@ Travis dashboard available at https://travis-ci.org/mmathias/forecasty
 
 * Move weather API url and key to a constant file
 * Make the directive more configurable: number of days, things you would like to see(temperature, clouds or/and humidity)
-* Solve problems with https/http icon url requests because heroku runs on https and the images are hosted on http - move it to server.js
+* Solve problems with https/http icon url requests because heroku runs on https also and the images are hosted on http - move it to server.js
 * Improve UI with a nice color and slider
 
 
 ## HOSTING
 
-Application is hosted at https://forecasty.herokuapp.com/#/
+Application is hosted at http://forecasty.herokuapp.com/#/
