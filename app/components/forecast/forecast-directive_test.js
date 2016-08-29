@@ -1,9 +1,9 @@
 'use strict';
 
-describe('myApp.version module', function() {
+describe('myApp.forecast module', function() {
   beforeEach(module('myApp.version'));
 
-  describe('app-version directive', function() {
+  describe('app-forecast directive', function() {
     it('should print current version', function() {
       module(function($provide) {
         $provide.value('version', 'TEST_VER');
