@@ -1,17 +1,11 @@
 'use strict';
 
 describe('myApp.forecast module', function() {
-  beforeEach(module('myApp.version'));
+  beforeEach(module('myApp.forecast'));
 
   describe('app-forecast directive', function() {
-    it('should print current version', function() {
-      module(function($provide) {
-        $provide.value('version', 'TEST_VER');
-      });
-      inject(function($compile, $rootScope) {
-        var element = $compile('<span app-version></span>')($rootScope);
-        expect(element.text()).toEqual('TEST_VER');
-      });
+    it('should build html with feed', function() {
+      //TODO
     });
   });
 });
