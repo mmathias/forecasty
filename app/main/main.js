@@ -11,6 +11,5 @@ angular.module('myApp.main', ['ngRoute'])
 }])
 
 .controller('MainController', [function() {
-    console.log('here');
 
 }]);
