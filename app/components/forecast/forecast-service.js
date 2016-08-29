@@ -1,16 +1,16 @@
 'use strict';
 
 angular.module('myApp.forecast.forecast-service', [])
-    .service('forecastService', ['$http', '$interpolate', function($http, $interpolate) {
+    .service('forecastService', ['$http', '$interpolate', 'CONFIG', function($http, $interpolate, CONFIG) {
 
-        var URL = 'http://api.openweathermap.org/data/2.5/forecast?q={{city}}&mode=json&APPID={{appKey}}';
+        var PATH = '/data/2.5/forecast?q={{city}}&units=metric&mode=json&APPID={{appKey}}';
 
         this.getFeed = function(city) {
-            var urlFormatted = $interpolate(URL)({city: city, appKey: '7a0c4ab094f0fc455ac26f4999868257'});
+            var urlFormatted = CONFIG.forecast.url + $interpolate(PATH)({city: city, appKey: CONFIG.forecast.key});
 
             return $http.get(urlFormatted)
                 .then(function(response) {
-                    console.log(response);
+                    return response.data;
                 });
         }
 

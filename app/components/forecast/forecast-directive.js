@@ -4,10 +4,19 @@ angular.module('myApp.forecast.forecast-directive', [])
 
 .directive('forecast', ['forecastService', function(forecastService) {
     return {
-        template: '<div>Here is the forecast</div>',
+        templateUrl: 'components/forecast/forecast.html',
         restrict: 'E',
-        link: function() {
-            forecastService.getFeed('London,us');
+        scope: {
+            city: '@'
+        },
+        link: function(scope) {
+            scope.iconUrl = 'http://openweathermap.org/img/w/';
+
+            forecastService.getFeed(scope.city)
+                .then(function(data) {
+                    scope.city = data.city;
+                    scope.feed = data.list;
+                });
         }
     };
 }]);
