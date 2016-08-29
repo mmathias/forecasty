@@ -140,3 +140,16 @@ to your repository and execute scripts such as building the app or running tests
 contains a Travis configuration file, `.travis.yml`, which will cause Travis to run your
 tests when you push to GitHub.
 
+Travis dashboard available at https://travis-ci.org/mmathias/forecasty
+
+## TODO List
+
+* Move weather API url and key to a constant file
+* Make the directive more configurable: number of days, things you would like to see(temperature, clouds or/and humidity)
+* Solve problems with https/http icon url requests because heroku runs on https and the images are hosted on http - move it to server.js
+* Improve UI with a nice color and slider
+
+
+## HOSTING
+
+Application is hosted at https://forecasty.herokuapp.com/#/
